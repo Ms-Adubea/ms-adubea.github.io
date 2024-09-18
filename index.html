@@ -1,18 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ms-Adubea</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <script src="./scripts/portfolio.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
 <body>
-    <div class="navbar">
-        <a class="active" href="#"><i class="fa fa-fw fa-home"></i> Home</a>
-        <a href="#"><i class="fa fa-fw fa-search"></i> Search</a>
-        <a href="#"><i class="fa fa-fw fa-envelope"></i> Contact</a>
-        <a href="#"><i class="fa fa-fw fa-user"></i> Login</a>
-      </div>
+    <!-- Sidenav -->
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#home"><i class="fas fa-home"></i> Home</a>
+        <a href="#about"><i class="fas fa-user"></i> About Me</a>
+        <a href="#work"><i class="fas fa-briefcase"></i> My Work</a>
+        <a href="#services"><i class="fas fa-cogs"></i> Services</a>
+        <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+    </div>
+
+
+    <!-- Menu Icon -->
+    <span id="menuToggle" onclick="openNav()">&#9776; Menu</span>
+
+    <!-- Main content -->
+    <div class="main">
+        <!-- Home Section -->
+        <section id="home">
+            <div class="home-content">
+                <!-- Left Side: Introduction Text -->
+                <div class="intro-text">
+                    <h1>Welcome to My Portfolio</h1>
+                    <p>Your tagline or brief introduction.</p>
+                </div>
+
+                <!-- Right Side: Slideshow container -->
+                <div class="slideshow-container">
+                    <div class="mySlides fade">
+                        <img src="./assets/images/Img-28-no-bg.png" alt="Image 1">
+                    </div>
+                    <div class="mySlides fade">
+                        <img src="./assets/images/Img-30-no-bg.png" alt="Image 2">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about">
+            <h2>About Me</h2>
+            <p>Write about your background, experience, and skills here. You can also include a professional photo or a
+                personal description.</p>
+        </section>
+
+        <!-- My Work Section -->
+        <section id="work">
+            <h2>My Work</h2>
+            <div class="portfolio-items">
+                <!-- Each work can be a link to your project or an image with a description -->
+                <p>Project 1: Description</p>
+                <p>Project 2: Description</p>
+                <p>Project 3: Description</p>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services">
+            <h2>Services</h2>
+            <p>Describe the services you offer, like web development, design, SEO, etc.</p>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <p>Email: apeadutheodora@gmail.com</p>
+            <p>Phone: +233544082269</p>
+            <p>Social Links: Include links to your LinkedIn, GitHub, etc.</p>
+        </section>
+    </div>
 </body>
+
 </html>
