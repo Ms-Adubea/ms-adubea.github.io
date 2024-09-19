@@ -1,192 +1,312 @@
 /* Body and Font Styling */
 body {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-    transition: margin-left 0.4s;
-    /* background-color: #f4f4f4;
-    color: #333; */
-  }
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  transition: margin-left 0.4s;
+}
 
-  /* Sidenav Styles */
-  .sidenav {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: #333;
-    overflow-x: hidden;
-    transition: 0.4s;
-    padding-top: 60px;
-  }
-  .sidenav a {
-    padding: 10px 15px;
-    text-decoration: none;
-    font-size: 18px;
-    color: #fff;
-    display: block;
-    transition: 0.3s;
-  }
-  .sidenav a:hover {
-    background-color: #575757;
-  }
-  .sidenav .closebtn {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    font-size: 36px;
-  }
-  /* Sidenav Links with Icons */
+/* Fixed Navbar at the Top */
+#navbar {
+  position: fixed; /* Fixes it at the top */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 65px; /* Adjust the height */
+  background-color: #333333;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  z-index: 1000; /* Ensures it stays above the content */
+}
+
+/* Style for the text 'Ms. Thea' */
+.navbar-right {
+  font-size: 25px;
+  font-weight: bold;
+  padding-right: 80px;
+}
+
+/* Sidenav Styles */
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  /* z-index: 1; */
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden; /* Disable horizontal scroll */
+  transition: 0.5s; /* Smooth open/close transition */
+  padding-top: 60px; /* Push content down to avoid overlaying the navbar */
+}
+
+.sidenav a:hover {
+  /* background-color: #575757; */
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 50px;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/* Sidenav Links with Icons */
 .sidenav a {
-    display: flex;
-    align-items: center;
-    padding: 10px 15px;
-    text-decoration: none;
-    font-size: 18px;
-    color: #fff;
-    transition: 0.3s;
-  }
-  
-  /* Style the icons inside the links */
-  .sidenav a i {
-    margin-right: 10px;  /* Add some space between the icon and the text */
-    font-size: 20px;
-  }  
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
 
-  /* Menu Icon */
-  #menuToggle {
-    font-size: 40px;
-    cursor: pointer;
-    color: #333;
-    padding: 15px;
-  }
+/* Style the icons inside the links */
+.sidenav a i {
+  margin-right: 10px;
+  /* Space between icon and text */
+  font-size: 20px;
+  /* Adjust the size of the icon */
+}
 
-  /* Section Styling */
-  section {
-    padding: 60px;
-    text-align: center;
-  }
+/* Open/Close Side Nav Transitions */
+#sideNav {
+  width: 250px; /* Open size */
+}
+
+/* Menu Icon */
+#menuToggle {
+  font-size: 30px;
+  cursor: pointer;
+  padding: 15px;
+}
+
+.main {
+  padding-top: 70px; /* Make sure the content doesn't go under the fixed navbar */
+}
+
+/* Section Styling */
+section {
+  padding: 60px;
+  text-align: center;
+}
 
 /* Home Section Styling */
 #home {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 60px;
-    background-color: #0275d8;
-    color: white;
-    height: 100vh; /* Full height of the viewport */
-    box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* padding: 60px; */
+  background-color: #0275d8;
+  color: white;
+  height: 100vh; /* Full height of the viewport */
+  /* box-sizing: border-box; */
+  text-align: center;
+}
+
+.intro-text {
+  display: inline-block;
+}
+
+.intro-text h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.intro-text p {
+  font-size: 1.5rem;
+}
+
+/* Typewriter effect */
+#typewriter-text {
+  border-right: 2px solid white;
+  font-family: 'Courier New', Courier, monospace;
+  white-space: nowrap;
+  /* overflow: hidden; */
+  display: inline-block;
+  width: 0;
+  animation: blink-caret 0.75s step-end infinite;
+}
+
+  /* Blinking cursor animation */
+  @keyframes blink-caret {
+    50% { border-color: transparent; }
   }
-  
-  /* Flex container for content and slideshow */
+
+/* Flex container for content and slideshow */
+.home-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* Left Side: Intro Text */
+.intro-text {
+  flex: 1;
+  padding-right: 20px;
+}
+
+.intro-text h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.intro-text p {
+  font-size: 1.2rem;
+}
+
+/* Right Side: Slideshow container */
+.slideshow-container {
+  flex: 1;
+  max-width: 50%; /* Make slideshow take up half of the home section */
+  height: auto;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Slideshow image */
+.slideshow-container img {
+  width: 100%;
+  height: auto;
+  object-fit: cover; /* Ensures the image covers the container without being distorted */
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* Media Query: Make it responsive for smaller screens */
+@media screen and (max-width: 768px) {
   .home-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    max-width: 1200px;
+    flex-direction: column;
   }
-  
-  /* Left Side: Intro Text */
-  .intro-text {
-    flex: 1;
-    padding-right: 20px;
-  }
-  
-  .intro-text h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-  }
-  
-  .intro-text p {
-    font-size: 1.2rem;
-  }
-  
-  /* Right Side: Slideshow container */
+
   .slideshow-container {
-    flex: 1;
-    max-width: 50%; /* Make slideshow take up half of the home section */
-    height: auto;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  /* Slideshow image */
-  .slideshow-container img {
-    width: 100%;
-    height: auto;
-    object-fit: cover; /* Ensures the image covers the container without being distorted */
-  }
-  
-  /* Hide images by default */
-  .mySlides {
-    display: none;
-  }
-  
-  /* Fading animation */
-  .fade {
-    animation-name: fade;
-    animation-duration: 1.5s;
-  }
-  
-  @keyframes fade {
-    from { opacity: 0.4; }
-    to { opacity: 1; }
-  }
-  
-  /* Media Query: Make it responsive for smaller screens */
-  @media screen and (max-width: 768px) {
-    .home-content {
-      flex-direction: column;
-    }
-  
-    .slideshow-container {
-      max-width: 100%; /* Take full width on mobile */
-    }
-  
-    .intro-text {
-      padding-right: 0;
-      text-align: center;
-    }
-  }  
-
-  section#about {
-    background-color: #f4f4f4;
+    max-width: 100%;
+    /* Take full width on mobile */
   }
 
-  section#work {
-    background-color: #d9534f;
-    color: white;
+  .intro-text {
+    padding-right: 0;
+    text-align: center;
+  }
+}
+
+/* ABOUT ME SECTION */
+section#about {
+  background-color: #f4f4f4;
+  padding: 50px;
+}
+
+.about-container {
+  display: flex; /* Use flexbox to align the image and text side by side */
+  align-items: center; /* Vertically align items */
+  justify-content: flex-start; /* Align items to the left */
+}
+
+.about-img {
+  width: 40%; /* Adjust the size of the image */
+  margin-right: 20px; /* Space between the image and text */
+  border-radius: 10px; /* Optional: for rounded corners */
+}
+
+.about-text {
+  width: 60%; /* Adjust the text container width */
+}
+
+.about-text h2 {
+  margin-bottom: 20px;
+}
+
+.about-text p {
+  line-height: 1.6;
+}
+
+@media screen and (max-width: 768px) {
+  .about-container {
+    flex-direction: column; /* Stack the image and text on top of each other */
+    text-align: center; /* Center-align the text */
   }
 
-  section#services {
-    background-color: #5bc0de;
-    color: white;
+  .about-img {
+    width: 80%; /* Adjust image size for smaller screens */
+    margin-bottom: 20px; /* Add space below the image */
   }
 
-  section#contact {
-    background-color: #5cb85c;
-    color: white;
+  .about-text {
+    width: 100%; /* Full width text */
+  }
+}
+
+.download-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 20px;
+  background-color: #15cc3d;
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.download-btn:hover {
+  background-color: #a6df43;
+}
+
+
+section#work {
+  background-color: #d9534f;
+  color: white;
+}
+
+section#services {
+  background-color: #5bc0de;
+  color: white;
+}
+
+section#contact {
+  background-color: #5cb85c;
+  color: white;
+}
+
+/* Responsive Media Query */
+@media screen and (max-width: 768px) {
+  body {
+    padding: 0;
+    margin-left: 0;
   }
 
-  /* Responsive Media Query */
-  @media screen and (max-width: 768px) {
-    body {
-      padding: 0;
-      margin-left: 0;
-    }
-    #menuToggle {
-      font-size: 26px;
-    }
-    .sidenav {
-      padding-top: 30px;
-    }
-    .sidenav a {
-      font-size: 16px;
-    }
+  #menuToggle {
+    font-size: 26px;
+  }
+
+  .sidenav {
+    padding-top: 30px;
+  }
+
+  .sidenav a {
+    font-size: 16px;
+  }
 }

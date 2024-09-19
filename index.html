@@ -6,12 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
     <link rel="stylesheet" href="./css/styles.css">
-    <script src="./scripts/portfolio.js" defer></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="./scripts/portfolio.js" defer></script>
 </head>
 
 <body>
+    <!-- Menu Icon and fixed navbar top -->
+    <nav id="navbar">
+        <span id="menuToggle" onclick="openNav()">&#9776; Menu</span>
+        <span class="navbar-right">Ms. Thea</span>
+    </nav>
+
     <!-- Sidenav -->
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -22,10 +28,6 @@
         <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
     </div>
 
-
-    <!-- Menu Icon -->
-    <span id="menuToggle" onclick="openNav()">&#9776; Menu</span>
-
     <!-- Main content -->
     <div class="main">
         <!-- Home Section -->
@@ -33,8 +35,9 @@
             <div class="home-content">
                 <!-- Left Side: Introduction Text -->
                 <div class="intro-text">
-                    <h1>Welcome to My Portfolio</h1>
-                    <p>Your tagline or brief introduction.</p>
+                    <h5>Hey there!</h5>
+                    <h1>Welcome to Thea's World...</h1>
+                    <p><span id="typewriter-text"></span></p>
                 </div>
 
                 <!-- Right Side: Slideshow container -->
@@ -43,7 +46,7 @@
                         <img src="./assets/images/Img-28-no-bg.png" alt="Image 1">
                     </div>
                     <div class="mySlides fade">
-                        <img src="./assets/images/Img-30-no-bg.png" alt="Image 2">
+                        <img src="./assets/images/Img-5-no-bg.png" alt="Image 2">
                     </div>
                 </div>
             </div>
@@ -51,9 +54,20 @@
 
         <!-- About Me Section -->
         <section id="about">
-            <h2>About Me</h2>
-            <p>Write about your background, experience, and skills here. You can also include a professional photo or a
-                personal description.</p>
+            <div class="about-container">
+                <img src="./assets/images/Img-30-Ai.jpg" alt="About Image" class="about-img">
+                <div class="about-text">
+                    <h2>About Me</h2>
+                    <p>I'm a Freelancer Front-end Developer with over 12 years of experience. I'm from San Francisco. I
+                        code and create web elements for amazing people around the world. I like working with new
+                        people. New people are new experiences.
+                    </p>
+
+                    <!-- Button to download CV -->
+                    <a href="C:\Users\apead\Downloads\Web Dev Job Simulation Certificate.pdf" class="download-btn" download="Your-CV.pdf">Download CV</a>
+                </div>
+            </div>
+
         </section>
 
         <!-- My Work Section -->
@@ -81,6 +95,7 @@
             <p>Social Links: Include links to your LinkedIn, GitHub, etc.</p>
         </section>
     </div>
+
 </body>
 
 </html>
