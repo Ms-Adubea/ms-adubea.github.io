@@ -9,6 +9,8 @@
     document.body.style.marginLeft = "0";
   }
 
+  
+
 //   Home section slideshow
 let slideIndex = 0;
 showSlides();
@@ -67,4 +69,46 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // Start the typewriter effect
   typeWriter();
+});
+
+
+// Select all tab links
+const tabLinks = document.querySelectorAll('.tab_header ul li a');
+
+// Add click event to each tab link
+tabLinks.forEach((tab) => {
+    tab.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        // Remove 'active' class from all tabs and contents
+        document.querySelector('.tab_header ul li.active').classList.remove('active');
+        document.querySelector('.tab_content .tab_item.active').classList.remove('active');
+
+        // Add 'active' class to the clicked tab
+        tab.parentElement.classList.add('active');
+
+        // Show the corresponding content
+        const target = document.querySelector(tab.getAttribute('href'));
+        target.classList.add('active');
+    });
+});
+
+// Function to animate progress bars when the Skills tab is opened
+function animateProgressBars() {
+  // Select all progress bars
+  const progressBars = document.querySelectorAll('.progress_item');
+
+  progressBars.forEach(function (bar) {
+      // Get the data-value attribute (the percentage to fill)
+      const progressValue = bar.getAttribute('data-value');
+      
+      // Find the progress background element and set its width to the percentage
+      const progressBg = bar.querySelector('.progress_bg');
+      progressBg.style.width = progressValue + '%';
+  });
+}
+
+// Event listener to trigger the animation when the skills tab is clicked
+document.querySelector('a[href="#tab3"]').addEventListener('click', function() {
+  setTimeout(animateProgressBars, 300); // Delay to ensure the tab is fully active
 });

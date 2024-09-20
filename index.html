@@ -14,7 +14,7 @@
 <body>
     <!-- Menu Icon and fixed navbar top -->
     <nav id="navbar">
-        <span id="menuToggle" onclick="openNav()">&#9776; Menu</span>
+        <span id="menuToggle" style="font-size:30px;cursor: pointer" onclick="openNav()">&#9776; Menu</span>
         <span class="navbar-right">Ms. Thea</span>
     </nav>
 
@@ -26,14 +26,19 @@
             <li><a href="#about"><i class="fas fa-user"></i> About Me</a></li>
             <li><a href="#portfolio"><i class="fas fa-briefcase"></i> My Work</a></li>
             <li><a href="#services"><i class="fas fa-concierge-bell"></i> Services</a></li>
-            <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
-            <!-- Social Media Icons -->
-            <li><a href="https://www.snapchat.com" target="_blank"><i class="fab fa-snapchat"></i> Snapchat</a></li>
-            <li><a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i> Facebook</a></li>
-            <li><a href="https://www.whatsapp.com" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
-            <li><a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
-            <li><a href="https://www.github.com" target="_blank"><i class="fab fa-github"></i> GitHub</a></li>
-          </ul>
+
+            <!-- Contact with Dropdown Icons -->
+            <li class="dropdown">
+                <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+                <div class="dropdown-content">
+                    <a href="https://www.snapchat.com" target="_blank"><i class="fab fa-snapchat"></i> Snapchat</a>
+                    <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
+                    <a href="https://www.whatsapp.com" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                    <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    <a href="https://www.github.com" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                </div>
+            </li>
+        </ul>
     </div>
 
     <!-- Main content -->
@@ -51,8 +56,8 @@
             <div class="home-content">
                 <!-- Left Side: Introduction Text -->
                 <div class="intro-text">
-                    <h5>Hey there!</h5>
-                    <h1>I am Theodora...</h1>
+                    <h4>Hey there!</h4>
+                    <h1>I am Theodora Apeadu...</h1>
                     <p><span id="typewriter-text"></span></p>
                     <h1>Welcome to Thea's World!!</h1>
 
@@ -92,72 +97,210 @@
             </div>
         </section>
 
-        <section class="skills">
-            <div class="wavy-div">
-             <div class="box">
-                <div class="content">
-                    <h2>HTML</h2>
-                    <p>Experience</p>
-                    <p><i class="fa-regular fa-circle-check"></i></p>
-                    <p>t's the foundation of web pages. HTML defines the structure and layout of content on the web, using elements like headings, paragraphs, links, and images. It's responsible for the "skeleton" of a web page.
-                    </p>
-                    <p>Experience</p>
+        <!-- /About Information -->
+        <!-- Tabs Shortcode -->
+        <div class="resumo_fn_tabs">
+            <!-- Tab: Header -->
+            <div class="tab_header">
+                <ul>
+                    <li class="active"><a href="#tab1">Experience</a></li>
+                    <li><a href="#tab2">Education</a></li>
+                    <li><a href="#tab3">Skills</a></li>
+                </ul>
+            </div>
+            <!-- /Tab: Header -->
+
+            <!-- Tab: Content -->
+            <div class="tab_content">
+                <!-- #1 tab content -->
+                <div id="tab1" class="tab_item active">
+                    <!-- Boxed List -->
+                    <div class="resumo_fn_boxed_list">
+                        <ul>
+                            <li>
+                                <div class="item">
+                                    <div class="item_top">
+                                        <h5>Frenify LLC</h5>
+                                        <span>( 2018 — Today )</span>
+                                    </div>
+                                    <h3>Sr. Front-end Engineer</h3>
+                                    <p>Adipisicing Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor
+                                        incididunt ut labore et dolore magna aliqua. </p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="item">
+                                    <div class="item_top">
+                                        <h5>Google LLC</h5>
+                                        <span>( 2016 — 2018 )</span>
+                                    </div>
+                                    <h3>Front-end Developer</h3>
+                                    <p>Adipisicing Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor
+                                        incididunt ut labore et dolore magna aliqua. </p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="item">
+                                    <div class="item_top">
+                                        <h5>Twitter LLC</h5>
+                                        <span>( 2016 — 2011 )</span>
+                                    </div>
+                                    <h3>Graphic Designer</h3>
+                                    <p>Adipisicing Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor
+                                        incididunt ut labore et dolore magna aliqua. </p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- /Boxed List -->
                 </div>
-             </div>
-             <div class="box">
-                <div class="content">
-                    <h2>CSS</h2>
-                    <P><i class="fa-regular fa-circle-check"></i></P>
-                    <p>CSS is used to style and layout HTML elements. It controls the appearance of the web page, including colors, fonts, spacing, and responsiveness (how the page adapts to different devices like mobile phones or desktops)</p>
+                <!-- /#1 tab content -->
+
+                <!-- #2 tab content -->
+                <div id="tab2" class="tab_item">
+                    <!-- Boxed List -->
+                    <div class="resumo_fn_boxed_list">
+                        <ul>
+                            <li>
+                                <div class="item">
+                                    <div class="item_top">
+                                        <h5>Frenify University</h5>
+                                        <span>( 2014 — 2017 )</span>
+                                    </div>
+                                    <h3>Computer Science</h3>
+                                    <p>Adipisicing Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor
+                                        incididunt ut labore et dolore magna aliqua. </p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="item">
+                                    <div class="item_top">
+                                        <h5>Edu University</h5>
+                                        <span>( 2011 — 2014 )</span>
+                                    </div>
+                                    <h3>Master Degree</h3>
+                                    <p>Adipisicing Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor
+                                        incididunt ut labore et dolore magna aliqua. </p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="item">
+                                    <div class="item_top">
+                                        <h5>Clolumbia College</h5>
+                                        <span>( 2007 — 2011 )</span>
+                                    </div>
+                                    <h3>Bachelor Degree</h3>
+                                    <p>Adipisicing Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor
+                                        incididunt ut labore et dolore magna aliqua. </p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- /Boxed List -->
                 </div>
-             </div>
-                <div class="box">
-                    <div class="content">
-                        <h2>JAVASCRIPT</h2>
-                        <p><i class="fa-regular fa-circle-check"></i></p>
-                        <p>JavaScript is a programming language that brings interactivity to a web page. It's used to create dynamic content, such as image sliders, form validation, or real-time updates without refreshing the page (as seen in web applications).</p>
+                <!-- /#2 tab content -->
+
+                <!-- #3 tab content -->
+                <div id="tab3" class="tab_item">
+                    <!-- Progress Bar -->
+                    <div class="resumo_fn_progress_bar">
+                
+                        <div class="progress_item" data-value="92">
+                            <div class="item_in">
+                                <h3 class="progress_title">Adobe Photoshop</h3>
+                                <span class="progress_percent">92%</span>
+                                <div class="bg_wrap">
+                                    <div class="progress_bg" style="width: 0;"></div>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <div class="progress_item" data-value="95">
+                            <div class="item_in">
+                                <h3 class="progress_title">HTML5 &amp; CSS3</h3>
+                                <span class="progress_percent">95%</span>
+                                <div class="bg_wrap">
+                                    <div class="progress_bg" style="width: 0;"></div>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <div class="progress_item" data-value="80">
+                            <div class="item_in">
+                                <h3 class="progress_title">WordPress</h3>
+                                <span class="progress_percent">80%</span>
+                                <div class="bg_wrap">
+                                    <div class="progress_bg" style="width: 0;"></div>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <div class="progress_item" data-value="85">
+                            <div class="item_in">
+                                <h3 class="progress_title">Adobe Illustrator</h3>
+                                <span class="progress_percent">85%</span>
+                                <div class="bg_wrap">
+                                    <div class="progress_bg" style="width: 0;"></div>
+                                </div>
+                            </div>
+                        </div>
+                
+                    </div>
+                    <!-- /Progress Bar -->
+                </div>
+                
+                    <!-- Description -->
+                    <div class="resumo_fn_desc">
+                        <p>A freelance creative designer with a love for minimal design, clean typography and
+                            well-written
+                            code, located in San Francisco. Provide high quality and cost effective offshore web and
+                            software development services. Wide range of web and software development services across
+                            the
+                            world.</p>
                     </div>
                 </div>
-        </section>
-        <svg>
-        <filter id="wavy">
-            <feTurbulence x="0" y="0" baseFrequency="0.02" numOctaves="5" seed="2"></feTurbulence>
-            <animate atttributeName="baseFrequency" dur="60s" values="0.2;0.05;0.02" repeatCourt="indefinite"/>
-            <feDisplacementMap in="SourceGraphic" scale="30"></feDisplacementMap>
-        </filter>
-        </svg>
+                <!-- /#2 tab content -->
+            </div>
+            <!-- /Tab: Content -->
+        </div>
+        <!-- /Tabs Shortcode -->
     </div>
-        <!-- My Work Section -->
-        <section id="work">
-            <h2>My Work</h2>
-            <div class="portfolio-items">
-                <!-- Each work can be a link to your project or an image with a description -->
-                <p>Project 1: Description</p>
-                <p>Project 2: Description</p>
-                <p>Project 3: Description</p>
-            </div>
-        </section>
+    </div>
+    </section>
+    <!-- /About Section -->
 
-        <!-- Services Section -->
-        <section id="services">
-            <h2>Services</h2>
-            <p>Describe the services you offer, like web development, design, SEO, etc.</p>
-        </section>
 
-        <!-- Contact Section -->
-        <section id="contact">
-            <h2>Contact Me</h2>
-            <p>Email: apeadutheodora@gmail.com</p>
-            <p>Phone: +233544082269</p>
-            <p>Feel free to reach out to me via any of the platforms below:</p>
-            <div class="social-icons">
-                <a href="https://www.snapchat.com" target="_blank"><i class="fab fa-snapchat"></i></a>
-                <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
-                <a href="https://www.whatsapp.com" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="https://www.github.com" target="_blank"><i class="fab fa-github"></i></a>
-            </div>
-        </section>
+    <!-- My Work Section -->
+    <section id="work">
+        <h2>My Work</h2>
+        <div class="portfolio-items">
+            <!-- Each work can be a link to your project or an image with a description -->
+            <p>Project 1: Description</p>
+            <p>Project 2: Description</p>
+            <p>Project 3: Description</p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <h2>Services</h2>
+        <p>Describe the services you offer, like web development, design, SEO, etc.</p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>Email: apeadutheodora@gmail.com</p>
+        <p>Phone: +233544082269</p>
+        <p>Feel free to reach out to me via any of the platforms below:</p>
+        <div class="social-icons">
+            <a href="https://www.snapchat.com" target="_blank"><i class="fab fa-snapchat"></i></a>
+            <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.whatsapp.com" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.github.com" target="_blank"><i class="fab fa-github"></i></a>
+        </div>
+    </section>
     </div>
 
 </body>

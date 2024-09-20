@@ -10,10 +10,11 @@ body {
 #navbar {
   position: fixed; /* Fixes it at the top */
   top: 0;
-  left: 0;
+  /* left: 0; */
   width: 100%;
-  height: 65px; /* Adjust the height */
-  background-color: #333333;
+  height: 78px; 
+  /* Adjust the height */
+  background-color: #333333f8;
   color: white;
   display: flex;
   align-items: center;
@@ -26,20 +27,21 @@ body {
 .navbar-right {
   font-size: 25px;
   font-weight: bold;
-  padding-right: 80px;
+  padding-right: 50px;
 }
 
 /* Sidenav Styles */
 .sidenav {
   height: 100%;
-  width: 0;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-color: #111;
-  overflow-x: hidden; /* Disable horizontal scroll */
-  transition: 0.5s; /* Smooth open/close transition */
-  padding-top: 60px; /* Push content down to avoid overlaying the navbar */
+    width: 0; /* Initially hidden */
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111; /* Background color of the sidenav */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    transition: 0.5s; /* Smooth transition when opening/closing */
+    padding-top: 60px; /* Padding from the top */
 }
 
 .sidenav ul {
@@ -55,12 +57,55 @@ body {
   color: #f1f1f1;
 }
 
+/* Close button inside the sidenav */
 .sidenav .closebtn {
   position: absolute;
-  top: 50px;
+  top: 0;
   right: 25px;
   font-size: 36px;
   margin-left: 50px;
+}
+
+.sidenav ul .dropdown-content a {
+  color: white;
+}
+
+.sidenav ul .dropdown-content a:hover {
+  background-color: #444;
+}
+
+/* Dropdown container */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: relative; /* Adjust the dropdown to stay within the flow of the nav */
+  background-color: #333; /* Background color of the dropdown */
+  min-width: 180px; /* Width of the dropdown */
+  padding: 10px 0;
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: white;
+  padding: 10px 26px;
+  text-decoration: none;
+  display: block;
+  font-size: 5px;
+}
+
+.dropdown-content a:hover {
+  background-color: #444; /* Change background on hover */
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
 }
 
 /* Sidenav Links with Icons */
@@ -81,7 +126,7 @@ body {
 
 /* Open/Close Side Nav Transitions */
 #mySidenav {
-  width: 250px; /* Open size */
+  width: 0; /* Open size */
 }
 
 /* Menu Icon */
@@ -207,11 +252,18 @@ section {
 
 .intro-text {
   display: inline-block;
-}
+  margin-bottom: 20%;
+  }
 
 .intro-text h1 {
   font-size: 3rem;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+}
+
+.intro-text h4 {
+  margin-top: 10%;
+  font-size: 1.2rem;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .intro-text p {
@@ -223,9 +275,11 @@ section {
   border-right: 2px solid white;
   font-family: 'Courier New', Courier, monospace;
   white-space: nowrap;
-  /* overflow: hidden; */
   display: inline-block;
   width: 0;
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 20px;
   animation: blink-caret 0.75s step-end infinite;
 }
 
@@ -254,6 +308,7 @@ section {
 .intro-text h1 {
   font-size: 2.5rem;
   margin-bottom: 10px;
+  font-family: cursive;
 }
 
 .intro-text p {
@@ -272,7 +327,6 @@ section {
   margin-right: 15px;
   transition: background-color 0.3s ease;
 }
-
 
 /* Specific styles for Hire Me button */
 .hire-me {
@@ -338,41 +392,14 @@ section {
 }
 
 @keyframes jello-horizontal {
-  0% {
-    -webkit-transform: scale3d(1, 1, 1);
-    transform: scale3d(1, 1, 1);
+    0% { transform: scale3d(1, 1, 1); }
+    30% { transform: scale3d(1.25, 0.75, 1); }
+    40% { transform: scale3d(0.75, 1.25, 1); }
+    50% { transform: scale3d(1.15, 0.85, 1); }
+    65% { transform: scale3d(0.95, 1.05, 1); }
+    75% { transform: scale3d(1.05, 0.95, 1); }
+    100% { transform: scale3d(1, 1, 1); }
   }
-
-  30% {
-    -webkit-transform: scale3d(1.25, 0.75, 1);
-    transform: scale3d(1.25, 0.75, 1);
-  }
-
-  40% {
-    -webkit-transform: scale3d(0.75, 1.25, 1);
-    transform: scale3d(0.75, 1.25, 1);
-  }
-
-  50% {
-    -webkit-transform: scale3d(1.15, 0.85, 1);
-    transform: scale3d(1.15, 0.85, 1);
-  }
-
-  65% {
-    -webkit-transform: scale3d(0.95, 1.05, 1);
-    transform: scale3d(0.95, 1.05, 1);
-  }
-
-  75% {
-    -webkit-transform: scale3d(1.05, 0.95, 1);
-    transform: scale3d(1.05, 0.95, 1);
-  }
-
-  100% {
-    -webkit-transform: scale3d(1, 1, 1);
-    transform: scale3d(1, 1, 1);
-  }
-}
 
 /* Right Side: Slideshow container */
 .slideshow-container {
@@ -390,8 +417,7 @@ section {
 .slideshow-container img {
   width: 100%;
   height: auto;
-  object-fit: cover;
-  /* Ensures the image covers the container without being distorted */
+  object-fit: cover; /* Ensures the image covers the container without being distorted */
 }
 
 /* Fading animation */
@@ -490,78 +516,172 @@ section#about {
   background-color: #a6df43;
 }
 
-.skills {
-  margin: 0;
+
+/* Tabs Header */
+.resumo_fn_tabs .tab_header ul {
+  list-style: none;
   padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background-color: greenyellow;
+  justify-content: flex-start;
+  border-bottom: 2px solid #ddd;
 }
 
-.wavy-div {
+.resumo_fn_tabs .tab_header ul li {
+  margin-right: 30px;
+}
+
+.resumo_fn_tabs .tab_header ul li a {
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px 20px;
+  color: #333;
+  font-weight: bold;
+  display: block;
   position: relative;
+}
+
+.resumo_fn_tabs .tab_header ul li.active a,
+.resumo_fn_tabs .tab_header ul li a:hover {
+  color: #007bff; /* Change to your accent color */
+  border-bottom: 3px solid #007bff;
+}
+
+/* Tabs Content */
+.tab_content {
+  padding: 30px 0;
+}
+
+.resumo_fn_boxed_list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.resumo_fn_boxed_list ul li {
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.resumo_fn_boxed_list h5 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.resumo_fn_boxed_list h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+/* Progress Bar */
+.resumo_fn_progress_bar .progress_item {
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  overflow: hidden;
+}
+
+.resumo_fn_progress_bar .progress_item .item_in {
   display: flex;
   justify-content: space-between;
-  column-gap: 30px;
   align-items: center;
-  color: white;
 }
 
-.wavy-div .box {
-  position: relative;
-  height: 400px;
-  width: 300px;
-  display: flex;
-  justify-content: space-between;
-  column-gap: 10px;
-  align-items: center;
-  -webkit-box-reflect: below 15px
-    linear-gradient(transparent, transparent, rgba(0, 0, 0, 0.2));
-}
-.wavy-div .box :hover {
-  color: green;
+.resumo_fn_progress_bar .progress_item .progress_title {
+  font-size: 18px;
+  font-weight: bold;
 }
 
-.wavy-div .box::before {
-  content: "";
-  position: absolute;
+.resumo_fn_progress_bar .progress_item .progress_bg {
+  width: 0;
+  height: 10px;
+  background-color: #007bff;
+  border-radius: 5px;
+  transition: width 1s ease-in-out;
+}
+
+.resumo_fn_progress_bar .progress_item[data-value="92"] .progress_bg {
+  width: 92%;
+}
+
+.resumo_fn_progress_bar .progress_item[data-value="95"] .progress_bg {
+  width: 95%;
+}
+
+.resumo_fn_progress_bar .progress_item[data-value="80"] .progress_bg {
+  width: 80%;
+}
+
+.resumo_fn_progress_bar .progress_item[data-value="85"] .progress_bg {
+  width: 85%;
+}
+
+/* Style for the progress bar container */
+.resumo_fn_progress_bar {
+  margin-top: 20px;
+}
+
+/* Each progress item */
+.progress_item {
+  margin-bottom: 20px;
+}
+
+/* Title of the progress bar */
+.progress_title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+/* Background wrap for the progress bar */
+.bg_wrap {
+  background-color: #f1f1f1;
   width: 100%;
+  height: 8px;
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Animated progress background */
+.progress_bg {
+  background-color: #FF6363;
   height: 100%;
-  border: 4px solid violet;
-  background: black;
-  filter: url("#wavy");
+  width: 0;
+  transition: width 1.5s ease;
+  border-radius: 4px;
 }
 
-.wavy-div .box .content {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding-left: 10px;
-  text-align: center;
-  transition: 0.5s;
+/* Percentage label */
+.progress_percent {
+  float: right;
+  font-size: 14px;
+  color: #888;
 }
 
-.wavy-div .box:hover::before {
-  background: white;
-  transition: 0.5s;
+
+/* Description Styling */
+.resumo_fn_desc p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #555;
+  margin-top: 20px;
+  text-align: justify;
 }
 
-.wavy-dv .box::after {
-  content: "";
-  position: absolute;
-  width: 50%;
-  height: 100%;
-  border: 4px solid violet;
-  border-right: none;
-  background: black;
-  background: rgba(255, 255, 255, 0.1);
-  filter: url("#wavy");
+/* Hide all tab content by default except the active one */
+.tab_content .tab_item {
+  display: none;
+}
+
+/* Show the active tab content */
+.tab_content .tab_item.active {
+  display: block;
 }
 
 section#work {
