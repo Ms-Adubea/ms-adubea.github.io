@@ -34,7 +34,6 @@ body {
   height: 100%;
   width: 0;
   position: fixed;
-  /* z-index: 1; */
   top: 0;
   left: 0;
   background-color: #111;
@@ -43,8 +42,16 @@ body {
   padding-top: 60px; /* Push content down to avoid overlaying the navbar */
 }
 
+.sidenav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidenav ul li {
+  margin-bottom: 15px;
+}
+
 .sidenav a:hover {
-  /* background-color: #575757; */
   color: #f1f1f1;
 }
 
@@ -68,14 +75,12 @@ body {
 
 /* Style the icons inside the links */
 .sidenav a i {
-  margin-right: 10px;
-  /* Space between icon and text */
-  font-size: 20px;
-  /* Adjust the size of the icon */
+  margin-right: 10px; /* Space between icon and text */
+  font-size: 20px; /* Adjust the size of the icon */
 }
 
 /* Open/Close Side Nav Transitions */
-#sideNav {
+#mySidenav {
   width: 250px; /* Open size */
 }
 
@@ -87,7 +92,8 @@ body {
 }
 
 .main {
-  padding-top: 70px; /* Make sure the content doesn't go under the fixed navbar */
+  padding-top: 70px;
+  /* Make sure the content doesn't go under the fixed navbar */
 }
 
 /* Section Styling */
@@ -99,14 +105,104 @@ section {
 /* Home Section Styling */
 #home {
   display: flex;
+  position: relative;
   align-items: center;
   justify-content: center;
-  /* padding: 60px; */
   background-color: #0275d8;
   color: white;
+  background-size: 600% 600%;
+  padding: 50px 0;
   height: 100vh; /* Full height of the viewport */
-  /* box-sizing: border-box; */
+  overflow: hidden;
+  perspective: 1000px;
   text-align: center;
+  -webkit-animation: color-change-2x 2s linear infinite alternate both;
+  animation: color-change-2x 2s linear infinite alternate both;
+}
+
+.background-shapes .shape {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1); /* Adds shadow for depth */
+  border-radius: 50%;
+  animation: float3D 20s infinite ease-in-out, rotateShape 10s infinite linear;
+  z-index: 0; /* Shapes should stay behind the content */
+  transform-style: preserve-3d; /* Preserves the 3D effect for child elements */ 
+}
+
+.background-shapes .shape:nth-child(1) {
+  width: 100px;
+  height: 100px;
+  top: 20%;
+  left: 10%;
+  animation-duration: 18s, 12s; /* Different durations for floating and rotation */
+}
+
+.background-shapes .shape:nth-child(2) {
+  width: 150px;
+  height: 150px;
+  top: 50%;
+  left: 70%;
+  animation-duration: 22s, 15s;
+}
+
+.background-shapes .shape:nth-child(3) {
+  width: 200px;
+  height: 200px;
+  top: 75%;
+  left: 30%;
+  animation-duration: 26s, 18s;
+}
+
+.background-shapes .shape:nth-child(4) {
+  width: 120px;
+  height: 120px;
+  top: 40%;
+  left: 50%;
+  animation-duration: 20s, 14s;
+}
+
+/* Floating Animation */
+@keyframes float3D {
+  0% {
+    transform: translateZ(0) translateY(0);
+  }
+  50% {
+    transform: translateZ(200px) translateY(-30px); /* Adds depth with Z movement */
+  }
+  100% {
+    transform: translateZ(0) translateY(0);
+  }
+}
+
+/* Rotating Animation for Shapes */
+@keyframes rotateShape {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+  100% {
+    transform: rotateX(360deg) rotateY(360deg); /* Full 3D rotation */
+  }
+}
+
+@-webkit-keyframes color-change-2x {
+  0% {
+    background: #19dcea;
+  }
+
+  100% {
+    background: #b22cff;
+  }
+}
+
+@keyframes color-change-2x {
+  0% {
+    background: #19dcea;
+  }
+
+  100% {
+    background: #b22cff;
+  }
 }
 
 .intro-text {
@@ -133,10 +229,12 @@ section {
   animation: blink-caret 0.75s step-end infinite;
 }
 
-  /* Blinking cursor animation */
-  @keyframes blink-caret {
-    50% { border-color: transparent; }
+/* Blinking cursor animation */
+@keyframes blink-caret {
+  50% {
+    border-color: transparent;
   }
+}
 
 /* Flex container for content and slideshow */
 .home-content {
@@ -149,7 +247,7 @@ section {
 
 /* Left Side: Intro Text */
 .intro-text {
-  flex: 1;
+  /* flex: 1; */
   padding-right: 20px;
 }
 
@@ -159,13 +257,128 @@ section {
 }
 
 .intro-text p {
-  font-size: 1.2rem;
+  font-size: 2rem;
+}
+
+/* Common button styles */
+.btn {
+  display: inline-block;
+  padding: 12px 25px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-right: 15px;
+  transition: background-color 0.3s ease;
+}
+
+
+/* Specific styles for Hire Me button */
+.hire-me {
+  background-color: #28a745;
+  /* Green */
+}
+
+.hire-me:hover {
+  background-color: #218838;
+  /* Darker green on hover */
+  -webkit-animation: jello-horizontal 0.9s both;
+  animation: jello-horizontal 0.9s both;
+}
+
+@-webkit-keyframes jello-horizontal {
+  0% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  30% {
+    -webkit-transform: scale3d(1.25, 0.75, 1);
+    transform: scale3d(1.25, 0.75, 1);
+  }
+
+  40% {
+    -webkit-transform: scale3d(0.75, 1.25, 1);
+    transform: scale3d(0.75, 1.25, 1);
+  }
+
+  50% {
+    -webkit-transform: scale3d(1.15, 0.85, 1);
+    transform: scale3d(1.15, 0.85, 1);
+  }
+
+  65% {
+    -webkit-transform: scale3d(0.95, 1.05, 1);
+    transform: scale3d(0.95, 1.05, 1);
+  }
+
+  75% {
+    -webkit-transform: scale3d(1.05, 0.95, 1);
+    transform: scale3d(1.05, 0.95, 1);
+  }
+
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+/* Specific styles for View Portfolio button */
+.view-portfolio {
+  background-color: #007bff;
+  /* Blue */
+}
+
+.view-portfolio:hover {
+  background-color: #0056b3;
+  /* Darker blue on hover */
+  -webkit-animation: jello-horizontal 0.9s both;
+  animation: jello-horizontal 0.9s both;
+}
+
+@keyframes jello-horizontal {
+  0% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  30% {
+    -webkit-transform: scale3d(1.25, 0.75, 1);
+    transform: scale3d(1.25, 0.75, 1);
+  }
+
+  40% {
+    -webkit-transform: scale3d(0.75, 1.25, 1);
+    transform: scale3d(0.75, 1.25, 1);
+  }
+
+  50% {
+    -webkit-transform: scale3d(1.15, 0.85, 1);
+    transform: scale3d(1.15, 0.85, 1);
+  }
+
+  65% {
+    -webkit-transform: scale3d(0.95, 1.05, 1);
+    transform: scale3d(0.95, 1.05, 1);
+  }
+
+  75% {
+    -webkit-transform: scale3d(1.05, 0.95, 1);
+    transform: scale3d(1.05, 0.95, 1);
+  }
+
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
 }
 
 /* Right Side: Slideshow container */
 .slideshow-container {
   flex: 1;
-  max-width: 50%; /* Make slideshow take up half of the home section */
+  max-width: 50%;
+  /* Make slideshow take up half of the home section */
   height: auto;
   position: relative;
   display: flex;
@@ -177,7 +390,8 @@ section {
 .slideshow-container img {
   width: 100%;
   height: auto;
-  object-fit: cover; /* Ensures the image covers the container without being distorted */
+  object-fit: cover;
+  /* Ensures the image covers the container without being distorted */
 }
 
 /* Fading animation */
@@ -214,6 +428,7 @@ section {
 }
 
 /* ABOUT ME SECTION */
+
 section#about {
   background-color: #f4f4f4;
   padding: 50px;
@@ -275,6 +490,79 @@ section#about {
   background-color: #a6df43;
 }
 
+.skills {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: greenyellow;
+}
+
+.wavy-div {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  column-gap: 30px;
+  align-items: center;
+  color: white;
+}
+
+.wavy-div .box {
+  position: relative;
+  height: 400px;
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+  column-gap: 10px;
+  align-items: center;
+  -webkit-box-reflect: below 15px
+    linear-gradient(transparent, transparent, rgba(0, 0, 0, 0.2));
+}
+.wavy-div .box :hover {
+  color: green;
+}
+
+.wavy-div .box::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 4px solid violet;
+  background: black;
+  filter: url("#wavy");
+}
+
+.wavy-div .box .content {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-left: 10px;
+  text-align: center;
+  transition: 0.5s;
+}
+
+.wavy-div .box:hover::before {
+  background: white;
+  transition: 0.5s;
+}
+
+.wavy-dv .box::after {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  border: 4px solid violet;
+  border-right: none;
+  background: black;
+  background: rgba(255, 255, 255, 0.1);
+  filter: url("#wavy");
+}
 
 section#work {
   background-color: #d9534f;
@@ -309,4 +597,20 @@ section#contact {
   .sidenav a {
     font-size: 16px;
   }
+}
+
+/* Contact Section Social Icons */
+.social-icons {
+  margin-top: 20px;
+}
+
+.social-icons a {
+  font-size: 30px;
+  margin: 0 15px;
+  color: #333;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #007bff; /* Change color on hover */
 }

@@ -21,23 +21,45 @@
     <!-- Sidenav -->
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="#home"><i class="fas fa-home"></i> Home</a>
-        <a href="#about"><i class="fas fa-user"></i> About Me</a>
-        <a href="#work"><i class="fas fa-briefcase"></i> My Work</a>
-        <a href="#services"><i class="fas fa-cogs"></i> Services</a>
-        <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+        <ul>
+            <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="#about"><i class="fas fa-user"></i> About Me</a></li>
+            <li><a href="#portfolio"><i class="fas fa-briefcase"></i> My Work</a></li>
+            <li><a href="#services"><i class="fas fa-concierge-bell"></i> Services</a></li>
+            <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+            <!-- Social Media Icons -->
+            <li><a href="https://www.snapchat.com" target="_blank"><i class="fab fa-snapchat"></i> Snapchat</a></li>
+            <li><a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i> Facebook</a></li>
+            <li><a href="https://www.whatsapp.com" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
+            <li><a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+            <li><a href="https://www.github.com" target="_blank"><i class="fab fa-github"></i> GitHub</a></li>
+          </ul>
     </div>
 
     <!-- Main content -->
     <div class="main">
         <!-- Home Section -->
         <section id="home">
+            <!-- Background Shapes -->
+            <div class="background-shapes">
+                <div class="shape"></div>
+                <div class="shape"></div>
+                <div class="shape"></div>
+                <div class="shape"></div>
+            </div>
+
             <div class="home-content">
                 <!-- Left Side: Introduction Text -->
                 <div class="intro-text">
                     <h5>Hey there!</h5>
-                    <h1>Welcome to Thea's World...</h1>
+                    <h1>I am Theodora...</h1>
                     <p><span id="typewriter-text"></span></p>
+                    <h1>Welcome to Thea's World!!</h1>
+
+                    <div class="button-group">
+                        <a href="#contact" class="btn hire-me">Hire Me</a>
+                        <a href="#portfolio" class="btn view-portfolio">View Portfolio</a>
+                    </div>
                 </div>
 
                 <!-- Right Side: Slideshow container -->
@@ -64,12 +86,47 @@
                     </p>
 
                     <!-- Button to download CV -->
-                    <a href="C:\Users\apead\Downloads\Web Dev Job Simulation Certificate.pdf" class="download-btn" download="Your-CV.pdf">Download CV</a>
+                    <a href="C:\Users\apead\Downloads\Web Dev Job Simulation Certificate.pdf" class="download-btn"
+                        download="Your-CV.pdf">Download CV</a>
                 </div>
             </div>
-
         </section>
 
+        <section class="skills">
+            <div class="wavy-div">
+             <div class="box">
+                <div class="content">
+                    <h2>HTML</h2>
+                    <p>Experience</p>
+                    <p><i class="fa-regular fa-circle-check"></i></p>
+                    <p>t's the foundation of web pages. HTML defines the structure and layout of content on the web, using elements like headings, paragraphs, links, and images. It's responsible for the "skeleton" of a web page.
+                    </p>
+                    <p>Experience</p>
+                </div>
+             </div>
+             <div class="box">
+                <div class="content">
+                    <h2>CSS</h2>
+                    <P><i class="fa-regular fa-circle-check"></i></P>
+                    <p>CSS is used to style and layout HTML elements. It controls the appearance of the web page, including colors, fonts, spacing, and responsiveness (how the page adapts to different devices like mobile phones or desktops)</p>
+                </div>
+             </div>
+                <div class="box">
+                    <div class="content">
+                        <h2>JAVASCRIPT</h2>
+                        <p><i class="fa-regular fa-circle-check"></i></p>
+                        <p>JavaScript is a programming language that brings interactivity to a web page. It's used to create dynamic content, such as image sliders, form validation, or real-time updates without refreshing the page (as seen in web applications).</p>
+                    </div>
+                </div>
+        </section>
+        <svg>
+        <filter id="wavy">
+            <feTurbulence x="0" y="0" baseFrequency="0.02" numOctaves="5" seed="2"></feTurbulence>
+            <animate atttributeName="baseFrequency" dur="60s" values="0.2;0.05;0.02" repeatCourt="indefinite"/>
+            <feDisplacementMap in="SourceGraphic" scale="30"></feDisplacementMap>
+        </filter>
+        </svg>
+    </div>
         <!-- My Work Section -->
         <section id="work">
             <h2>My Work</h2>
@@ -92,7 +149,14 @@
             <h2>Contact Me</h2>
             <p>Email: apeadutheodora@gmail.com</p>
             <p>Phone: +233544082269</p>
-            <p>Social Links: Include links to your LinkedIn, GitHub, etc.</p>
+            <p>Feel free to reach out to me via any of the platforms below:</p>
+            <div class="social-icons">
+                <a href="https://www.snapchat.com" target="_blank"><i class="fab fa-snapchat"></i></a>
+                <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.whatsapp.com" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.github.com" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
         </section>
     </div>
 

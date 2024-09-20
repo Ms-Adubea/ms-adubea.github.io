@@ -1,19 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Basic Test with JavaScript</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./test.css">
 </head>
 <body>
-
-  <p><span id="typewriter-text"></span></p>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      document.getElementById("typewriter-text").textContent = "Hello, this is a test!";
-    });
-  </script>
+    
+  
+    <section id="home">
+        <!-- Background 3D Shapes -->
+        <div class="background-shapes">
+          <div class="shape"></div>
+          <div class="shape"></div>
+          <div class="shape"></div>
+          <div class="shape"></div>
+        </div>
+      
+        <!-- Home Content: Typewriter text and buttons -->
+        <div class="home-content">
+          <h1><span id="typewriter-text"></span></h1>
+          <div class="button-group">
+            <a href="#contact" class="btn hire-me">Hire Me</a>
+            <a href="#portfolio" class="btn view-portfolio">View Portfolio</a>
+          </div>
+        </div>
+      
+        <!-- Slideshow Container -->
+        <div class="slideshow-container">
+          <!-- Your slideshow images go here -->
+        </div>
+      </section>
+          
+      <section class="skills">
+        <div class="wavy-div">
+         <div class="box">
+            <div class="content">
+                <h2>HTML</h2>
+                <p>Experience</p>
+                <p><i class="fa-regular fa-circle-check"></i></p>
+                <p>t's the foundation of web pages. HTML defines the structure and layout of content on the web, using elements like headings, paragraphs, links, and images. It's responsible for the "skeleton" of a web page.
+                </p>
+                <p>Experience</p>
+            </div>
+         </div>
+         <div class="box">
+            <div class="content">
+                <h2>CSS</h2>
+                <P><i class="fa-regular fa-circle-check"></i></P>
+                <p>CSS is used to style and layout HTML elements. It controls the appearance of the web page, including colors, fonts, spacing, and responsiveness (how the page adapts to different devices like mobile phones or desktops)</p>
+            </div>
+         </div>
+            <div class="box">
+                <div class="content">
+                    <h2>JAVASCRIPT</h2>
+                    <p><i class="fa-regular fa-circle-check"></i></p>
+                    <p>JavaScript is a programming language that brings interactivity to a web page. It's used to create dynamic content, such as image sliders, form validation, or real-time updates without refreshing the page (as seen in web applications).</p>
+                </div>
+            </div>
+    </section>
+    <svg>
+    <filter id="wavy">
+        <feTurbulence x="0" y="0" baseFrequency="0.02" numOctaves="5" seed="2"></feTurbulence>
+        <animate atttributeName="baseFrequency" dur="60s" values="0.2;0.05;0.02" repeatCourt="indefinite"/>
+        <feDisplacementMap in="SourceGraphic" scale="30"></feDisplacementMap>
+    </filter>
+    </svg>
+</div>
 
 </body>
 </html>
