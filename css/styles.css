@@ -12,8 +12,7 @@ body {
   top: 0;
   /* left: 0; */
   width: 100%;
-  height: 78px; 
-  /* Adjust the height */
+  height: 78px;  /* Adjust the height */
   background-color: #333333f8;
   color: white;
   display: flex;
@@ -455,10 +454,10 @@ section {
 
 /* ABOUT ME SECTION */
 
-section#about {
+/* section#about {
   background-color: #f4f4f4;
   padding: 50px;
-}
+} */
 
 .about-container {
   display: flex; /* Use flexbox to align the image and text side by side */
@@ -560,7 +559,7 @@ section#about {
 
 .resumo_fn_boxed_list ul li {
   margin-bottom: 20px;
-  padding: 20px;
+  padding: 10px;
   background-color: #f9f9f9;
   border-radius: 5px;
   border: 1px solid #ddd;
@@ -600,7 +599,7 @@ section#about {
 .resumo_fn_progress_bar .progress_item .progress_bg {
   width: 0;
   height: 10px;
-  background-color: #007bff;
+  background-color: #00ff37;
   border-radius: 5px;
   transition: width 1s ease-in-out;
 }
@@ -672,6 +671,7 @@ section#about {
   color: #555;
   margin-top: 20px;
   text-align: justify;
+  padding: 15px;
 }
 
 /* Hide all tab content by default except the active one */
@@ -693,6 +693,143 @@ section#services {
   background-color: #5bc0de;
   color: white;
 }
+
+/* Service Area */
+.service-area {
+  padding: 80px 0;
+  background-color: #5bc0de;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 0;
+}
+
+/* Single Service Card Styles */
+.single-service {
+  background: #fff;
+  padding: 40px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease-in-out;
+}
+
+.single-service.active {
+  background-color: #282828;
+  color: #fff;
+}
+
+.single-service .service-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 20px;
+}
+
+.single-service .service-icon img {
+  width: 100%;
+}
+
+.single-service .service-text h4 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.single-service.active .service-text h4 {
+  color: #fff;
+}
+
+.single-service .service-text p {
+  font-size: 16px;
+  color: #777;
+}
+
+.single-service.active .service-text p {
+  color: #ddd;
+}
+
+/* Circle Effects */
+.circles-wrap {
+  position: absolute;
+  bottom: -70px;
+  right: -70px;
+}
+
+.circles span {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.3;
+}
+
+.circle-1 {
+  width: 120px;
+  height: 120px;
+  background: #ffba00;
+  top: 10px;
+  right: 0;
+}
+
+.circle-2 {
+  width: 100px;
+  height: 100px;
+  background: #ff8b00;
+  bottom: 50px;
+  left: 20px;
+}
+
+.circle-3 {
+  width: 80px;
+  height: 80px;
+  background: #ff5000;
+  bottom: 0;
+  right: 40px;
+}
+
+.circle-4 {
+  width: 50px;
+  height: 50px;
+  background: #ff2900;
+  top: 20px;
+  left: 60px;
+}
+
+/* Hover Effects */
+.single-service:hover {
+  transform: translateY(-10px);
+}
+
+.single-service:hover .circles-wrap {
+  animation: moveCircles 6s ease-in-out infinite;
+}
+
+@keyframes moveCircles {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+  .service-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .service-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 
 section#contact {
   background-color: #5cb85c;
@@ -733,4 +870,82 @@ section#contact {
 
 .social-icons a:hover {
   color: #007bff; /* Change color on hover */
+}
+
+/* Work Section Styles */
+.work-section {
+  text-align: center;
+  padding: 50px 0;
+  background-color: #f4f4f4;
+}
+
+.carousel-container {
+  position: relative;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.carousel-slide {
+  display: none;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: auto;
+}
+
+.carousel-caption {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+  color: #fff;
+  font-size: 18px;
+  padding: 8px;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 24px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Dot indicators */
+.dots-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
 }

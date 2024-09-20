@@ -9,8 +9,6 @@
     document.body.style.marginLeft = "0";
   }
 
-  
-
 //   Home section slideshow
 let slideIndex = 0;
 showSlides();
@@ -112,3 +110,38 @@ function animateProgressBars() {
 document.querySelector('a[href="#tab3"]').addEventListener('click', function() {
   setTimeout(animateProgressBars, 300); // Delay to ensure the tab is fully active
 });
+
+
+// Carousel functionality for the Work section
+let workSlideIndex = 1;
+showWorkSlides(workSlideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showWorkSlides(workSlideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showWorkSlides(workSlideIndex = n);
+}
+
+function showWorkSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("carousel-slide");
+  let dots = document.getElementsByClassName("dot");
+
+  if (n > slides.length) { workSlideIndex = 1 }
+  if (n < 1) { workSlideIndex = slides.length }
+
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+
+  slides[workSlideIndex - 1].style.display = "block";  
+  dots[workSlideIndex - 1].className += " active";
+}
