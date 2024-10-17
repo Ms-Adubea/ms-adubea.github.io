@@ -152,7 +152,7 @@ section {
   position: relative;
   align-items: center;
   justify-content: center;
-  background-color: #0274d860;
+  background-color: #5BC0DE;
   background-size: 600% 600%;
   padding: 50px 0;
   height: 100vh; /* Full height of the viewport */
@@ -230,7 +230,7 @@ section {
 
 /* Typewriter effect */
 #typewriter-text {
-  position: relative;
+  position: re;
   display: inline-block;
   font-size: 1.2rem;
   color: white;
@@ -268,7 +268,6 @@ section {
   margin-bottom: 10%;
   flex: 1;
   padding-right: 40px;
-  text-align: left;
 }
 
 .intro-text h1 {
@@ -498,9 +497,75 @@ section {
   font-size: 19px;
 }
 
-section#work {
-  background-color: #d9534f;
-  color: white;
+/* Work area */
+.work-section {
+  padding: 2rem;
+  background-color: #f5f5f5;
+}
+
+.carousel-container {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.carousel {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.carousel-item {
+  flex: 0 0 300px;
+  margin-right: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.project-info {
+  padding: 1rem;
+}
+
+.project-info h3 {
+  margin: 0 0 0.5rem;
+}
+
+.learn-more-btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  margin-top: 0.5rem;
+}
+
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+.carousel-button.prev {
+  left: 10px;
+}
+
+.carousel-button.next {
+  right: 10px;
 }
 
 section#services {
@@ -822,4 +887,44 @@ button {
 }
 button:hover {
   background-color: #005fa3;
+}
+
+.content {
+    flex: 1;
+}
+footer {
+    background-color: #0077be;
+    color: #fff;
+    padding: 20px 0;
+}
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.footer-section {
+    margin: 10px;
+}
+.footer-section h3 {
+    margin-bottom: 10px;
+}
+.socials a {
+    color: #f5f5f5;
+    text-decoration: none;
+    margin-right: 10px;
+}
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #555;
+    margin-top: 20px;
+}
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
 }

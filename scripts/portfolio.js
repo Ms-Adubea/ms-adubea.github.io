@@ -63,36 +63,67 @@
   });
   
 
-// Carousel functionality for the Work section
-let workSlideIndex = 1;
-showWorkSlides(workSlideIndex);
 
-// Next/previous controls
-function plusSlides(n) {
-  showWorkSlides(workSlideIndex += n);
-}
-
-// Thumbnail image controls
-function currentSlide(n) {
-  showWorkSlides(workSlideIndex = n);
-}
-
-function showWorkSlides(n) {
-  let i;
-  let slides = document.getElementsByClassName("carousel-slide");
-  let dots = document.getElementsByClassName("dot");
-
-  if (n > slides.length) { workSlideIndex = 1 }
-  if (n < 1) { workSlideIndex = slides.length }
-
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";  
-  }
-
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
-
-  slides[workSlideIndex - 1].style.display = "block";  
-  dots[workSlideIndex - 1].className += " active";
-}
+  document.addEventListener('DOMContentLoaded', function() {
+    const carousel = document.querySelector('.carousel');
+    const prevButton = document.querySelector('.carousel-button.prev');
+    const nextButton = document.querySelector('.carousel-button.next');
+    
+    if (!carousel || !prevButton || !nextButton) {
+        return;
+    }
+  
+    const itemWidth = document.querySelector('.carousel-item').offsetWidth + 20; // Include margin
+  
+    let currentPosition = 0;
+    let isAutoSliding = true;
+    let autoSlideInterval;
+  
+    function moveCarousel(direction) {
+        const maxPosition = -(carousel.scrollWidth - carousel.clientWidth);
+        if (direction === 'prev' && currentPosition < 0) {
+            currentPosition += itemWidth;
+        } else if (direction === 'next' && currentPosition > maxPosition) {
+            currentPosition -= itemWidth;
+        } else if (direction === 'next' && currentPosition <= maxPosition) {
+            // Reset to the beginning when reaching the end
+            currentPosition = 0;
+        }
+        carousel.style.transform = `translateX(${currentPosition}px)`;
+    }
+  
+    function startAutoSlide() {
+        autoSlideInterval = setInterval(() => {
+            moveCarousel('next');
+        }, 3000); // Change slide every 3 seconds
+    }
+  
+    function stopAutoSlide() {
+        clearInterval(autoSlideInterval);
+    }
+  
+    prevButton.addEventListener('click', () => {
+        moveCarousel('prev');
+        stopAutoSlide();
+        isAutoSliding = false;
+    });
+  
+    nextButton.addEventListener('click', () => {
+        moveCarousel('next');
+        stopAutoSlide();
+        isAutoSliding = false;
+    });
+  
+    carousel.addEventListener('mouseenter', () => {
+        stopAutoSlide();
+    });
+  
+    carousel.addEventListener('mouseleave', () => {
+        if (isAutoSliding) {
+            startAutoSlide();
+        }
+    });
+  
+    // Start auto-sliding
+    startAutoSlide();
+  });
